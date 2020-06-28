@@ -6,19 +6,21 @@ from direct.showbase.ShowBase import ShowBase
 class Jeu(ShowBase):
     def __init__(self):
         ShowBase.__init__(self)
-        # Affichage de l'objet
-        self.perso1 = self.loader.loadModel("mes_objets3D/panda")
+        
+class Perso():
+    def __init__(self):
+          # Affichage de l'objet
+        self.perso = monJeu.loader.loadModel("mes_objets3D/panda")
         # Attacher l'objet à la scène
-        self.perso1.reparentTo(self.render)
+        self.perso.reparentTo(monJeu.render)
         # Modifier la taille de l'objet
-        self.perso1.setScale(0.02,0.02,0.02)
+        self.perso.setScale(0.02,0.02,0.02)
         # Déplacer l'objet
-        self.perso1.setPos(-20,100,0)
+        self.perso.setPos(-20,100,0)
         # Tourner l'objet
-        self.perso1.setHpr(90,0,0)
-        self.
+        self.perso.setHpr(90,0,0) 
 
-          
 monJeu = Jeu()
+panda = Perso()
 
 monJeu.run()
