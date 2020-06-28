@@ -2,6 +2,7 @@ from panda3d.core import loadPrcFile
 loadPrcFile("config.pyc")
 
 from direct.showbase.ShowBase import ShowBase
+from direct.actor.Actor import Actor
 
 class Perso():
     def __init__(self, modele, x, y, z, direction):
@@ -36,7 +37,7 @@ if __name__ == "__main__":
     decor.reparentTo(monJeu.render)
     ######## AJOUT DU PERSONNAGE
     # On charge le modèle 3D
-    modeleJoueur = monJeu.loader.loadModel("mes_objets3D/panda")
+    modeleJoueur = Actor("mes_objets3D/panda")
     # On l'attache à la scène
     modeleJoueur.reparentTo(monJeu.render)
     # On règle les paramètres du joueur
