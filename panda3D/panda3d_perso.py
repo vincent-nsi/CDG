@@ -5,14 +5,18 @@ from direct.showbase.ShowBase import ShowBase
        
 class Perso():
     def __init__(self, modele, x, y, z, direction):
-          # Affichage de l'objet
+          # Les variables de l'objet
         self.perso = modele
+        self.x = x
+        self.y = y
+        self.z = z
+        self.direction = direction
         # Modifier la taille de l'objet
         self.perso.setScale(0.02,0.02,0.02)
         # Déplacer l'objet
-        self.perso.setPos(x,y,z)
+        self.perso.setPos(self.x,self.y,self.z)
         # Tourner l'objet
-        self.perso.setH(direction)
+        self.perso.setH(self.direction)
 
 if __name__ == "__main__":
     monJeu = ShowBase()
