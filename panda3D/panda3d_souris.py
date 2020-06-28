@@ -5,24 +5,22 @@ from direct.showbase.ShowBase import ShowBase
 
 class Perso():
     def __init__(self, modele, x, y, z, direction):
-          # Les variables de l objet
+        # Les variables de l'objet
         self.perso = modele
         self.x = x
+        self.y = y
+        self.z = z
+        self.direction = direction
         # Modifier la taille de l'objet
         self.perso.setScale(0.02,0.02,0.02)
         # Déplacer l'objet
-        self.perso.setPos(x,y,z)
+        self.perso.setPos(self.x,self.y,self.z)
         # Tourner l'objet
-        self.perso.setH(direction)
-
-    def avance(self):
-        # On lit la coordonnée x du personnage
-        #pos = self.x
-        # On lui ajoute 1
-        #pos = pos + 1
-        # On renvoie la nouvelle coordonnée
-        self.x = self.x + 1
-        self.perso.setX(self.x)
+        self.perso.setH(self.direction)
+    
+    def tourne(self):
+        self.direction = self.direction + 10
+        self.perso.setH(self.direction)
 
 
 # le corps du programme principal
@@ -44,7 +42,6 @@ if __name__ == "__main__":
     # On règle les paramètres du joueur
     joueur = Perso(modeleJoueur, 0, 42, 0, 45)
     ######## GESTION DES EVENEMENTS
-    monJeu.accept("arrow_left",joueur.avance)
-
+    monJeu.accept("mouse1",joueur.tourne)
 
     monJeu.run()
