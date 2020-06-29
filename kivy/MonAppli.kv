@@ -1,6 +1,7 @@
 
 <MonInterface>
-    nom: idNom
+    entre: idEntre
+    message: idMessage
     GridLayout:
         size: root.width, root.height
         cols: 1
@@ -9,6 +10,10 @@
             Label: 
                 text: "Bonjour"
             TextInput:
-                id:idNom
+                id:idEntre
         Button:
             text:"Valider"
+            on_press:root.clicBouton()
+        Label:
+            id: idMessage
+            text:""
